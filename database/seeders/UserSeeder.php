@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'password' => $password,
             'profile_photo_path' => null,
             'celular' => '65152340',
-        ])->assignRole('Encargado de Almacen');
+        ])->assignRole('Empleado');
 
         User::create([
             'name' => 'Juan Mendoza Pereira',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             'password' => $password,
             'profile_photo_path' => null,
             'celular' => '75174852',
-        ])->assignRole('Personal Administrativo');
+        ])->assignRole('Admin');
 
         User::create([
             'name' => 'Eduardo',
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'password' => $password,
             'profile_photo_path' => null,
             'celular' => '65152340',
-        ])->assignRole('Encargado de Envio');
+        ])->assignRole('Empleado');
 
         User::create([
             'name' => 'Pepe',
@@ -54,14 +54,14 @@ class UserSeeder extends Seeder
             'password' => $password,
             'profile_photo_path' => null,
             'celular' => '65152340',
-        ])->assignRole('Encargado de compra');
+        ])->assignRole('Empleado');
 
         User::create([
             'name' => 'Lucas',
             'email' => 'lucas@gmail.com',
             'password' => $password,
             'profile_photo_path' => null,
-            'celular' => '691743336',
+            'celular' => '69164120',
         ])->assignRole('Cliente');
 
         User::create([
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
             'profile_photo_path' => null,
             'celular' => '65842139',
         ])->assignRole('Cliente');
-
+        
         User::create([
             'name' => 'Miguel',
             'email' => 'miguel@gmail.com',
@@ -93,5 +93,6 @@ class UserSeeder extends Seeder
             'profile_photo_path' => null,
             'celular' => '78921435',
         ])->assignRole('Cliente');
+                
     }
 }

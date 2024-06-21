@@ -12,7 +12,7 @@ class MetodoEnvioController extends Controller
     public function getMetodoEnvio()
     {
         try {
-            $envio = MetodoEnvio::with("pais")->get();
+            $envio = MetodoEnvio::get();
             return response()->json(['mensaje' => 'Consulta exitosa', 'data' => $envio], 200);
         } catch (\Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);
@@ -27,7 +27,6 @@ class MetodoEnvioController extends Controller
             $envio->transportista = $request->transportista;
             $envio->metodo = $request->metodo;
             $envio->costo_kg = $request->costo_kg;
-            $envio->pais_id = $request->pais_id;
             $envio->save();
             DB::commit();
             return response()->json(['mensaje' => 'Método de envio creado exitosamente'], 200);

@@ -14,17 +14,15 @@ class MetodoEnvioSeeder extends Seeder
     public function run(): void
     {
         MetodoEnvio::create([
-            'transportista' => 'USPS',
+            'transportista' => 'BOA',
             'metodo' => 'aereo',
-            'costo_kg' => '315',
-            'pais_id' => '1',
+            'costo_kg' => '25',
         ]);
 
         MetodoEnvio::create([
             'transportista' => 'TAB',
             'metodo' => 'aereo',
-            'costo_kg' => '270',
-            'pais_id' => '1',
+            'costo_kg' => '35',
         ]);
     }
 }

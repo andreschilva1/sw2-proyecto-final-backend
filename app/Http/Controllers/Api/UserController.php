@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function createEmployee(Request $request)
-    {
+    public function createEmployee(Request $request){
         try {
             DB::beginTransaction();
             $user = new User();
@@ -28,7 +27,7 @@ class UserController extends Controller
             $empleado->user_id = $user->id;
             $empleado->almacen_id = $request->almacenId;
             $empleado->save();
-
+            
             DB::commit();
             return response()->json(['mensaje' => 'Empleado creado exitosamente'], 200);
         } catch (\Exception $e) {
@@ -37,50 +36,25 @@ class UserController extends Controller
         }
     }
 
-    public function getEmployees()
-    {
+    public function getEmployees(){
         try {
-
-            /* $empleados = User::role('Empleado')->get(); */
-
-            $roles = [
-                'Encargado de Almacen',
-                'Encargado de Envio',
-                'Encargado de compra'
-            ];
-            $empleados = User::whereHas('roles', function ($query) use ($roles) {
-                $query->whereIn('name', $roles);
-            })->get();
+            $empleados = User::role('Empleado')->get();
             return response()->json(['mensaje' => 'Consulta exitosa', 'data' => $empleados], 200);
         } catch (\Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);
         }
     }
 
-    public function editEmployee(Request $request)
-    {
+    public function editEmployee(Request $request){
         try {
-            $user = User::find($request->id);
-            $rol = $user->getRoleNames()->first();
-            return response()->json([
-                'mensaje' => 'Consulta exitosa',
-                'status' => 'success',
-                'id' => $user->id,
-                'name' => $user->name,
-                'email' => $user->email,
-                'rol' => $rol,
-                'celular' => $user->celular,
-                'photo_path' => $user->profile_photo_path,
-                'casillero' => ($rol == "Cliente") ?  $user->cliente->numero_casillero : '',
-                'almacen' => ($rol == "Empleado") ?  $user->empleado->almacen->name : '',
-            ], 200);
+            $employee = User::where("id", $request->id)->first();
+            return response()->json(['mensaje' => 'Consulta exitosa', 'data' => $employee], 200);
         } catch (\Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);
         }
     }
 
-    public function deleteEmployee(Request $request)
-    {
+    public function deleteEmployee(Request $request){
         try {
             DB::beginTransaction();
             $user = User::findOrFail($request->id);
@@ -91,5 +65,6 @@ class UserController extends Controller
             DB::rollback();
             return response()->json(['mensaje' => $e->getMessage()], 500);
         }
+        
     }
 }

@@ -13,16 +13,11 @@ class Almacen extends Model
     protected $fillable = [
         'name',
         'direccion',
-        'pais_id',
+        'telefono',
+        'pais',
     ];
 
-    public function empleados()
-    {
-        return $this->hasMany(Empleado::class, 'almacen_id', 'id');
-    }
-
-    public function pais()
-    {
-        return $this->belongsTo(Pais::class, 'pais_id', 'id');
+    public function empleados(){
+        return $this->hasMany(Empleado::class,'almacen_id','id');
     }
 }
