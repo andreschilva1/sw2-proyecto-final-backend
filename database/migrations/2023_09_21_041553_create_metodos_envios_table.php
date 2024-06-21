@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('transportista');
             $table->string('metodo');
             $table->string('costo_kg');
-            $table->foreignId('pais_id')->constrained('paises')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

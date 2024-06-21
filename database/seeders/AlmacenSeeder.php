@@ -16,7 +16,8 @@ class AlmacenSeeder extends Seeder
         Almacen::create([
             'name' => 'Alan Fergusson',
             'direccion' => '8216 NW 68th St Miami, FL 33166',
-            'pais_id' => '1',
+            'telefono' => '123456789',
+            'pais'=> 'USA',
         ]);
     }
 }

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('direccion');
-            $table->foreignId('pais_id')->constrained('paises')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('telefono');
+            $table->string('pais');
             $table->timestamps();
         });
     }
