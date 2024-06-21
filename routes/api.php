@@ -7,7 +7,11 @@ use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\EnvioController;
 use App\Http\Controllers\Api\EstadoEnvioController;
 use App\Http\Controllers\Api\MetodoEnvioController;
+use App\Http\Controllers\Api\PaisController;
 use App\Http\Controllers\Api\PaqueteController;
+use App\Http\Controllers\Api\RastreoController;
+use App\Http\Controllers\Api\SeguimientoController;
+use App\Http\Controllers\Api\WebHookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +32,7 @@ Route::post('/login', [AuthApiController::class, 'login'])->name('api.login');
 Route::post('createClient', [ClientController::class, 'createClient']);
 
 
-
+Route::post('webHook', [WebHookController::class, 'notify']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
 
@@ -65,7 +69,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     //paquete
     Route::post('/createPaquete', [PaqueteController::class, 'createPaquete'])->name('api.createPaquete');
+    Route::post('/registrarConsolidacion', [PaqueteController::class, 'registrarConsolidacion'])->name('api.registrarConsolidacion');
+    Route::post('/createConsolidacion', [PaqueteController::class, 'createConsolidacion'])->name('api.createConsolidacion');
+    Route::post('/editConsolidacion', [PaqueteController::class, 'editConsolidacion'])->name('api.editConsolidacion');
     Route::get('obtenerPaquetes', [PaqueteController::class, 'obtenerPaquetes']);
+    Route::get('obtenerPaquetesAlmacen', [PaqueteController::class, 'obtenerPaquetesAlmacen']);
+    Route::get('obtenerPaquetesConsolidacion', [PaqueteController::class, 'obtenerPaquetesConsolidacion']);
+    Route::get('obtenerPaquetesAlmacenEditar', [PaqueteController::class, 'obtenerPaquetesAlmacenEditar']);
     Route::post('/reconocerPaquete', [PaqueteController::class, 'reconocerPaquete'])->name('api.reconocerPaquete');
 
     //Método de Envío
@@ -81,4 +91,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('createEnvio', [EnvioController::class, 'createEnvio']);
     Route::patch('getEnvio', [EnvioController::class, 'getEnvio']);
     Route::post('storeEnvio', [EnvioController::class, 'storeEnvio']);
+
+    //Pais
+    Route::get('getPaises', [PaisController::class, 'getPaises']);
+
+    //rastreo
+    Route::get('getRastreos', [RastreoController::class, 'getRastreos']);
+    Route::post('resgistrarRastreo', [RastreoController::class, 'resgistrar']);
+
+    Route::post('getTrackInfo', [SeguimientoController::class, 'getTrackInfo']);
+    Route::post('registrarNumeroTraking', [SeguimientoController::class, 'registrarNumeroTraking']);
+    Route::post('changeCarrier', [SeguimientoController::class, 'changeCarrier']);
+    Route::get('getCarriers', [SeguimientoController::class, 'getCarriers']);
 });
