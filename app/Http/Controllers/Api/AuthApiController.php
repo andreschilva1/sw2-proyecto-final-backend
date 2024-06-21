@@ -17,7 +17,6 @@ class AuthApiController extends Controller
             $user = User::find(Auth::user()->id);
             $token = $user->createToken('API TOKEN')->plainTextToken;
             $rol = $user->getRoleNames()->first();
-
             return response()->json([
                 'status' => 'success',
                 'token' => $token,

@@ -28,7 +28,6 @@ class UserController extends Controller
             $empleado->user_id = $user->id;
             $empleado->almacen_id = $request->almacenId;
             $empleado->save();
-
             DB::commit();
             return response()->json(['mensaje' => 'Empleado creado exitosamente'], 200);
         } catch (\Exception $e) {
