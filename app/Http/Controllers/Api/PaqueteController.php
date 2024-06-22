@@ -163,7 +163,8 @@ class PaqueteController extends Controller
              "urlSource": "' . $imegeUrl . '" 
             }';
 
-            $analyzeLabelRequest = new Request('POST', 'https://reconocimientoPaquetes2.cognitiveservices.azure.com/formrecognizer/documentModels/EtiquetasPacketes:analyze?api-version=2023-07-31', $headers, $body);
+            /* $analyzeLabelRequest = new Request('POST', 'https://reconocimientoPaquetes2.cognitiveservices.azure.com/formrecognizer/documentModels/EtiquetasPacketes:analyze?api-version=2023-07-31', $headers, $body); */
+            $analyzeLabelRequest = new Request('POST', 'https://reconocimiento-paquete.cognitiveservices.azure.com/formrecognizer/documentModels/etiquetasPaquetes:analyze?api-version=2023-07-31', $headers, $body);
             $analyzeLabelResponse = $client->sendAsync($analyzeLabelRequest)->wait();
 
             $headerResponse = $analyzeLabelResponse->getHeaders();
