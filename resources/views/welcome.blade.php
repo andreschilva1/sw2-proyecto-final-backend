@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>Logistrack</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -27,7 +27,9 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
         <div class="container px-5">
-            <a class="navbar-brand fw-bold" href="#page-top">Importadora Campos</a>
+            <img src="{{ asset('landing/assets/img/logistrack.png') }}" alt="..."
+                style="height: 4rem; margin-right: 10px" />
+            <a class="navbar-brand fw-bold" href="#page-top">Logistrack</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -42,7 +44,8 @@
                 @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}"
+                                class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}"class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">Log in</a>
 
@@ -70,13 +73,12 @@
                 <div class="col-lg-6">
                     <!-- Mashead text and app badges-->
                     <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                        <h1 class="display-1 lh-1 mb-3">Descubre la App de Importadora Campos.</h1>
-                        <p class="lead fw-normal text-muted mb-5">La aplicación de Importadora Campos transforma la
-                            gestión de pedidos, ofreciendo rapidez y seguridad. Experimenta una interfaz intuitiva y
-                            simplifica tu proceso de importación. ¡Descárgala hoy y vive la diferencia con Importadora
-                            Campos!</p>
+                        <h1 class="display-1 lh-1 mb-3">Descubre la App de Logistrack.</h1>
+                        <p class="lead fw-normal text-muted mb-5">Logistrack es una aplicación de
+                            gestión logística que está diseñada específicamente para empresas que ofrecen servicios de
+                            importación, proporcionando una solución integral para registrar, rastrear y gestionar envíos.</p>
                         <div class="d-flex flex-column flex-lg-row align-items-center">
-                            <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge"
+                            <a class="me-lg-3 mb-4 mb-lg-0" href="https://drive.google.com/drive/folders/1d0QT66sN02HSLJ3lJwEH4L4onjr2sEHb?usp=sharing"><img class="app-badge"
                                     src="{{ asset('landing/assets/img/google-play-badge.svg') }}" alt="..." /></a>
                             {{-- <a href="#!"><img class="app-badge" src="{{ asset('landing/assets/img/app-store-badge.svg')}}" alt="..." /></a> --}}
                         </div>
@@ -128,7 +130,8 @@
                 <div class="col-xl-8">
                     <div class="h2 fs-1 text-white mb-4">Una solución intuitiva para un problema común que todos
                         enfrentamos, reunida en una sola aplicación!.</div>
-                    <img src="{{ asset('landing/assets/img/tnw-logo.svg') }}" alt="..." style="height: 3rem" />
+                    <img src="{{ asset('landing/assets/img/logistrack.png') }}" alt="..."
+                        style="height: 12rem" />
                 </div>
             </div>
         </div>
@@ -144,18 +147,16 @@
                                 <!-- Feature item-->
                                 <div class="text-center">
                                     <i class="bi-phone icon-feature text-gradient d-block mb-3"></i>
-                                    <h3 class="font-alt">Device Mockups</h3>
-                                    <p class="text-muted mb-0">Ready to use HTML/CSS device mockups, no Photoshop
-                                        required!</p>
+                                    <h3 class="font-alt">Notificaciones Push:</h3>
+                                    <p class="text-muted mb-0">Mantén a tus clientes y trabajadores informados con notificaciones push en tiempo real.</p>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-5">
                                 <!-- Feature item-->
                                 <div class="text-center">
-                                    <i class="bi-camera icon-feature text-gradient d-block mb-3"></i>
-                                    <h3 class="font-alt">Flexible Use</h3>
-                                    <p class="text-muted mb-0">Put an image, video, animation, or anything else in the
-                                        screen!</p>
+                                    <i class="bi-truck icon-feature text-gradient d-block mb-3"></i>
+                                    <h3 class="font-alt">Rastreo de Envíos:</h3>
+                                    <p class="text-muted mb-0">Los clientes pueden seguir el estado de sus envíos gracias a la integración con 17track.</p>
                                 </div>
                             </div>
                         </div>
@@ -164,18 +165,16 @@
                                 <!-- Feature item-->
                                 <div class="text-center">
                                     <i class="bi-gift icon-feature text-gradient d-block mb-3"></i>
-                                    <h3 class="font-alt">Free to Use</h3>
-                                    <p class="text-muted mb-0">As always, this theme is free to download and use for
-                                        any purpose!</p>
+                                    <h3 class="font-alt">Registro de Paquetes:</h3>
+                                    <p class="text-muted mb-0">Los trabajadores pueden registrar paquetes entrantes de manera eficiente utilizando tecnología OCR avanzada.</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <!-- Feature item-->
                                 <div class="text-center">
                                     <i class="bi-patch-check icon-feature text-gradient d-block mb-3"></i>
-                                    <h3 class="font-alt">Open Source</h3>
-                                    <p class="text-muted mb-0">Since this theme is MIT licensed, you can use it
-                                        commercially!</p>
+                                    <h3 class="font-alt">Pagos Seguros:</h3>
+                                    <p class="text-muted mb-0">Ofrecemos un método de pago seguro y conveniente a través del servicio de Stripe.</p>
                                 </div>
                             </div>
                         </div>
@@ -226,14 +225,15 @@
         </div>
     </section>
     <!-- Basic features section-->
-    <section class="bg-light">
+   {{--  <section class="bg-light">
         <div class="container px-5">
             <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
                 <div class="col-12 col-lg-5">
-                    <h2 class="display-4 lh-1 mb-4">Enter a new age of web design</h2>
-                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">This section is perfect for featuring some
-                        information about your application, why it was built, the problem it solves, or anything else!
-                        There's plenty of space for text here, so don't worry about writing too much.</p>
+                    <h2 class="display-4 lh-1 mb-4">Funciones principales:</h2>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"><strong>Rastreo de Envíos:</strong> Los clientes pueden seguir el estado de sus envíos en tiempo real gracias a la integración con la API de 17track.</p>
+                        <p  class="lead fw-normal text-muted mb-5 mb-lg-0"><strong>Registro de Paquetes:</strong> Los trabajadores pueden registrar paquetes entrantes de manera eficiente utilizando tecnología OCR avanzada, entrenada en Azure Cloud Service.</p>
+                        <p  class="lead fw-normal text-muted mb-5 mb-lg-0"><strong>Notificaciones Push:</strong> Mantén a tus clientes y trabajadores informados con notificaciones push en tiempo real mediante Firebase.</p>
+                        <p  class="lead fw-normal text-muted mb-5 mb-lg-0"><strong>Pagos Seguros:</strong> Ofrecemos un método de pago seguro y conveniente a través de la API de Stripe.</p>
                 </div>
                 <div class="col-sm-8 col-md-6">
                     <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle"
@@ -241,18 +241,17 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Call to action section-->
     <section class="cta">
         <div class="cta-content">
             <div class="container px-5">
                 <h2 class="text-white display-1 lh-1 mb-4">
-                    Stop waiting.
+                    Descarga la aplicación de Logistrack ahora!
                     <br />
-                    Start building.
                 </h2>
                 <a class="btn btn-outline-light py-3 px-4 rounded-pill"
-                    href="https://startbootstrap.com/theme/new-age" target="_blank">Download for free</a>
+                    href="https://drive.google.com/drive/folders/1d0QT66sN02HSLJ3lJwEH4L4onjr2sEHb?usp=sharing" target="_blank">Download Now</a>
             </div>
         </div>
     </section>
@@ -261,7 +260,7 @@
         <div class="container px-5">
             <h2 class="text-center text-white font-alt mb-4">Get the app now!</h2>
             <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge"
+                <a class="me-lg-3 mb-4 mb-lg-0" href="https://drive.google.com/drive/folders/1d0QT66sN02HSLJ3lJwEH4L4onjr2sEHb?usp=sharing"><img class="app-badge"
                         src="{{ asset('landing/assets/img/google-play-badge.svg') }}" alt="..." /></a>
                 {{-- <a href="#!"><img class="app-badge" src="{{ asset('landing/assets/img/app-store-badge.svg')}}" alt="..." /></a> --}}
             </div>
